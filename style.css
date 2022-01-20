@@ -55,6 +55,28 @@ html {
     font-weight: lighter;
 }
 
+@media (max-width: 767px){
+    .form-style{
+    grid-template-columns: 1fr;
+    
+    }
+    .form-button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        width: 95%;
+        
+    }
+    .form-task{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        width: 95%;
+    }
+};
+
 .form-list{
     background-color: white;
     margin-top: -14px;

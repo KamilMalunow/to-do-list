@@ -1,13 +1,6 @@
 {
     const tasks = [
-        {
-            content: "test1",
-            done: false,
-        },
-        {
-            content: "test2",
-            done: true,
-        }
+        
     ];
 
 
@@ -59,6 +52,7 @@
         <button class="js-delete">
         🗑
         </button>
+        
         </li>
         `;
         }

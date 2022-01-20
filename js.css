@@ -1,0 +1,32 @@
+.tasklist-task{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns:28px 1fr 28px;
+    padding: 20px 10px 20px 0;
+    width: 100%;
+    background-color: white;
+    outline: 5px solid grey;
+    
+}
+
+.js-done{
+    background-color: green;
+    width:100%;
+}
+
+.js-delete{
+    background-color: red;
+    
+    width:100%;
+}
+
+.task-list__text{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.task-done{
+    text-decoration: line-through;
+    color: red;
+}

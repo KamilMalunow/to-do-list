@@ -10,6 +10,7 @@
         }
     ];
 
+
     const toggleTaskDone = (index) => {
         tasks[index].done = !tasks[index].done;
         render();
@@ -24,18 +25,18 @@
         tasks.push({
             content: NewTaskContent,
         });
-    render();
+        render();
     }
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-    
+
         const NewTaskContent = document.querySelector(".js-task").value.trim();
-        if (NewTaskContent === ""){
+        if (NewTaskContent === "") {
             return;
         }
-        
-            addNewTask(NewTaskContent);
+
+        addNewTask(NewTaskContent);
     };
 
     const render = () => {
@@ -44,28 +45,37 @@
         for (const task of tasks) {
             htmlString += `
         <li
-         class="tasklist-task${task.done ? " task-done" : ""}"
+         class="tasklist-task"
          >
-        <button class="js-done">✔</button>
-        <span class="task-list__text">${task.content}</span>
-        <button class="js-delete">🗑</button>
+
+        <button class="js-done">
+        ${task.done ? "✔" : ""}
+        </button>
+
+        <span class="task-list__text${task.done ? " task-done" : ""}">
+        ${task.content}
+        </span>
+
+        <button class="js-delete">
+        🗑
+        </button>
         </li>
         `;
         }
         document.querySelector(".js-tasklist").innerHTML = htmlString;
 
         const removeButton = document.querySelectorAll(".js-delete");
-    
+
         removeButton.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
-              removeTask(index);
+                removeTask(index);
             });
         });
 
 
-        
+
         const doneButton = document.querySelectorAll(".js-done");
-    
+
         doneButton.forEach((doneButton, index) => {
             doneButton.addEventListener("click", () => {
                 toggleTaskDone(index);
@@ -73,7 +83,7 @@
         });
     }
 
-   
+
 
 
 
@@ -81,9 +91,10 @@
         render();
 
         const form = document.querySelector(".js-form");
-        
+
         form.addEventListener("submit", onFormSubmit);
     };
-    
+
     init();
+
 }

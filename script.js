@@ -10,6 +10,10 @@
         }
     ];
 
+    removeTask = (index) => {
+        tasks.splice(index, 1);
+        render();
+    };
     const addNewTask = (NewTaskContent) => {
         tasks.push({
             content: NewTaskContent,
@@ -44,7 +48,19 @@
         }
         document.querySelector(".js-tasklist").innerHTML = htmlString;
 
+        const removeButton = document.querySelectorAll(".js-delete");
+    
+        removeButton.forEach((removeButton, index) => {
+            removeButton.addEventListener("click", () => {
+              removeTask(index);
+            });
+        });
     }
+
+   
+
+
+
     const init = () => {
         render();
 
